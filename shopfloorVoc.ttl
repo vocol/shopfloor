@@ -1,0 +1,21 @@
+@prefix gr: <http://purl.org/goodrelations/v1#>.
+@prefix scor: <http://shopfloor.com/sensor/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#####
+# RL.2.1 - % of Orders Delivered In Full
+#
+# Percentage of orders which all of the items are received by customer in the 
+# quantities committed. The number of orders that are received by the customer 
+# in the quantities committed divided by the total orders.
+####
+
+# scor Main classes
+
+scor:Process a owl:Class ;
+	rdfs:label "Process" ;
+	rdfs:comment "A process is a unique activity performed to meet predefined outcomes" .
