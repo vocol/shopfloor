@@ -23,7 +23,7 @@ sf:PressureSensor  a     owl:Class ;
 sf:TemperatureSensor  a  owl:Class ;
         rdfs:subClassOf  sf:SensingDevice .
 
-<sfobserves>  a      owl:ObjectProperty ;
+sf:observes  a       owl:ObjectProperty ;
         rdfs:domain  sf:Sensor ;
         rdfs:label   "observes"@EN .
 
