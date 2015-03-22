@@ -15,6 +15,9 @@ sf:SensingDevice  a      owl:Class ;
 
 sf:System  a    owl:Class .
 
+sf:Property  a      rdf:Property ;
+        rdfs:label  "Property"@EN .
+
 sf:Sensor  a    owl:Class .
 
 sf:PressureSensor  a     owl:Class ;
@@ -25,7 +28,8 @@ sf:TemperatureSensor  a  owl:Class ;
 
 sf:observes  a       owl:ObjectProperty ;
         rdfs:domain  sf:Sensor ;
-        rdfs:label   "observes"@EN .
+        rdfs:label   "observes"@EN ;
+        rdfs:range   sf:Property .
 
 sf:PrecipitationSensor
         a                owl:Class ;
