@@ -4,36 +4,72 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
+sf:Observation  a  owl:Class .
+
+sf:observationResult  a  owl:ObjectProperty ;
+        rdfs:domain  sf:Observation ;
+        rdfs:label   "observationResult"@EN ;
+        rdfs:range   sf:SensorOutput .
+
 sf:Device  a             owl:Class ;
         rdfs:subClassOf  sf:System .
-
-sf:WindSensor  a         owl:Class ;
-        rdfs:subClassOf  sf:SensingDevice .
-
-sf:SensingDevice  a      owl:Class ;
-        rdfs:subClassOf  sf:Sensor , sf:Device .
-
-sf:System  a    owl:Class .
-
-sf:Property  a      rdf:Property ;
-        rdfs:label  "Property"@EN .
 
 sf:Sensor  a    owl:Class .
 
 sf:PressureSensor  a     owl:Class ;
         rdfs:subClassOf  sf:SensingDevice .
 
-sf:TemperatureSensor  a  owl:Class ;
+sf:PrecipitationSensor
+        a                owl:Class ;
         rdfs:subClassOf  sf:SensingDevice .
+
+sf:isProducedBy  a   owl:ObjectProperty ;
+        rdfs:domain  sf:SensorOutput ;
+        rdfs:label   "isProducedBy"@EN ;
+        rdfs:range   sf:Sensor .
+
+sf:hasValue  a       owl:ObjectProperty ;
+        rdfs:domain  sf:SensorOutput ;
+        rdfs:label   "hasValue"@EN ;
+        rdfs:range   sf:ObservationValue .
+
+sf:System  a    owl:Class .
+
+sf:HumiditySensor  a     owl:Class ;
+        rdfs:subClassOf  sf:SensingDevice .
+
+sf:observedBy  a     owl:ObjectProperty ;
+        rdfs:domain  sf:Observation ;
+        rdfs:label   "observedBy"@EN ;
+        rdfs:range   sf:Sensor .
 
 sf:observes  a       owl:ObjectProperty ;
         rdfs:domain  sf:Sensor ;
         rdfs:label   "observes"@EN ;
         rdfs:range   sf:Property .
 
-sf:PrecipitationSensor
-        a                owl:Class ;
+sf:isRegionFor  a    owl:ObjectProperty ;
+        rdfs:domain  sf:ObservationValue ;
+        rdfs:label   "isRegionFor"@EN ;
+        rdfs:range   sf:SensorOutput .
+
+sf:TemperatureSensor  a  owl:Class ;
         rdfs:subClassOf  sf:SensingDevice .
 
-sf:HumiditySensor  a     owl:Class ;
+sf:SensingDevice  a      owl:Class ;
+        rdfs:subClassOf  sf:Sensor , sf:Device .
+
+sf:observedProperty  a  owl:ObjectProperty ;
+        rdfs:domain  sf:Observation ;
+        rdfs:label   "observedProperty"@EN ;
+        rdfs:range   sf:Property .
+
+sf:WindSensor  a         owl:Class ;
         rdfs:subClassOf  sf:SensingDevice .
+
+sf:ObservationValue  a  owl:Class .
+
+sf:SensorOutput  a  owl:Class .
+
+sf:Property  a      rdf:Property ;
+        rdfs:label  "Property"@EN .
